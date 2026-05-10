@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gosula Venkata Vasu — Software Engineer Portfolio</title>
+  <meta name="description" content="Aspiring Software Engineer specializing in AI & ML, full-stack development, and cloud technologies." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Loading Screen -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">GVV</div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+      <p class="loader-text">Initializing portfolio...</p>
+    </div>
+  </div>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">GVV<span class="dot">.</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#certifications" class="nav-link">Certs</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta">Hire Me</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
+    <canvas id="particleCanvas"></canvas>
+    <div class="hero-glow glow-1"></div>
+    <div class="hero-glow glow-2"></div>
+    <div class="hero-glow glow-3"></div>
+    <div class="hero-content">
+      <div class="hero-badge reveal">
+        <span class="badge-dot"></span>
+        <span>Available for opportunities</span>
+      </div>
+      <h1 class="hero-name reveal">
+        Gosula<br/>Venkata <span class="accent">Vasu</span>
+      </h1>
+      <div class="hero-title reveal">
+        <span class="title-prefix">&lt;</span>
+        <span class="typed-text" id="typedText"></span>
+        <span class="type-cursor">|</span>
+        <span class="title-suffix">/&gt;</span>
+      </div>
+      <p class="hero-tagline reveal">
+        "Passionate about building innovative software solutions<br/>and creating impactful digital experiences."
+      </p>
+      <div class="hero-actions reveal">
+        <a href="#projects" class="btn btn-primary">
+          <span>View My Work</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+      </div>
+      <div class="hero-socials reveal">
+        <a href="https://github.com/vasugosula" target="_blank" class="social-link" title="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/gosula-venkata-vasu-965a1931b" target="_blank" class="social-link" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="mailto:vasugosula@gmail.com" class="social-link" title="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>Scroll to explore</span>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">01 / About</span>
+        <h2 class="section-title">Who I <span class="accent">Am</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-card glass reveal">
+          <div class="about-avatar">
+            <div class="avatar-ring"></div>
+            <div class="avatar-inner">GVV</div>
+            <div class="avatar-status">
+              <span class="status-dot"></span>
+              <span>Open to work</span>
+            </div>
+          </div>
+          <div class="about-info">
+            <div class="info-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <span>Gosula Venkata Vasu</span>
+            </div>
+            <div class="info-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Porumamilla, Andhra Pradesh, India</span>
+            </div>
+            <div class="info-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.64A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.29 6.29l1.28-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              <span>+91 7075843153</span>
+            </div>
+            <div class="info-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>vasugosula@gmail.com</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-text reveal">
+          <p class="about-summary">
+            A passionate Computer Science student specializing in <span class="highlight">AI & Machine Learning</span> at Mohan Babu University with a stellar CGPA of <span class="highlight">9.24</span>. I thrive at the intersection of software engineering and intelligent systems.
+          </p>
+          <p class="about-summary">
+            From building full-stack web platforms to exploring cloud technologies and AI-driven solutions — I'm relentless in my pursuit of <span class="highlight">innovation and excellence</span>.
+          </p>
+          <div class="goals-list">
+            <h3>Career Goals</h3>
+            <div class="goal-item">
+              <span class="goal-icon">⚡</span>
+              <span>AI Engineer at a top-tier tech company</span>
+            </div>
+            <div class="goal-item">
+              <span class="goal-icon">🚀</span>
+              <span>Build innovative software products that matter</span>
+            </div>
+            <div class="goal-item">
+              <span class="goal-icon">☁️</span>
+              <span>Specialize in AI & Cloud technologies</span>
+            </div>
+          </div>
+          <div class="strengths-grid">
+            <div class="strength-pill">Problem Solving</div>
+            <div class="strength-pill">Quick Learner</div>
+            <div class="strength-pill">Team Collaboration</div>
+            <div class="strength-pill">Analytical Thinking</div>
+            <div class="strength-pill">Adaptability</div>
+            <div class="strength-pill">Tech Passion</div>
+          </div>
+        </div>
+
+        <div class="education-card glass reveal">
+          <div class="edu-icon">🎓</div>
+          <div class="edu-content">
+            <h3>Mohan Babu University</h3>
+            <p class="edu-degree">B.Tech — Computer Science & Engineering (AI & ML)</p>
+            <div class="edu-meta">
+              <span class="edu-year">Class of 2027</span>
+              <div class="cgpa-badge">
+                <span class="cgpa-label">CGPA</span>
+                <span class="cgpa-value">9.24</span>
+              </div>
+            </div>
+            <div class="cgpa-bar">
+              <div class="cgpa-fill" style="width: 92.4%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section class="section skills" id="skills">
+    <div class="skills-bg-grid"></div>
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">02 / Skills</span>
+        <h2 class="section-title">Tech <span class="accent">Arsenal</span></h2>
+      </div>
+      <div class="skills-categories">
+        <div class="skill-category reveal">
+          <h3 class="cat-title"><span class="cat-icon">💻</span> Languages</h3>
+          <div class="skill-tags">
+            <div class="skill-tag"><span class="tag-icon">☕</span>Java</div>
+            <div class="skill-tag"><span class="tag-icon">🐍</span>Python</div>
+          </div>
+        </div>
+        <div class="skill-category reveal">
+          <h3 class="cat-title"><span class="cat-icon">🎨</span> Frontend</h3>
+          <div class="skill-tags">
+            <div class="skill-tag">HTML</div>
+            <div class="skill-tag">CSS</div>
+            <div class="skill-tag">JavaScript</div>
+            <div class="skill-tag">Bootstrap</div>
+            <div class="skill-tag accent-tag">React.js</div>
+          </div>
+        </div>
+        <div class="skill-category reveal">
+          <h3 class="cat-title"><span class="cat-icon">⚙️</span> Backend & DB</h3>
+          <div class="skill-tags">
+            <div class="skill-tag">PHP</div>
+            <div class="skill-tag">MySQL</div>
+          </div>
+        </div>
+        <div class="skill-category reveal">
+          <h3 class="cat-title"><span class="cat-icon">☁️</span> Cloud & DevOps</h3>
+          <div class="skill-tags">
+            <div class="skill-tag accent-tag">Amazon AWS</div>
+            <div class="skill-tag">Git</div>
+            <div class="skill-tag">GitHub</div>
+          </div>
+        </div>
+        <div class="skill-category reveal">
+          <h3 class="cat-title"><span class="cat-icon">🛠️</span> Tools</h3>
+          <div class="skill-tags">
+            <div class="skill-tag">VS Code</div>
+            <div class="skill-tag">Anaconda</div>
+            <div class="skill-tag">Jupyter</div>
+            <div class="skill-tag">StarUML</div>
+          </div>
+        </div>
+        <div class="skill-category reveal">
+          <h3 class="cat-title"><span class="cat-icon">🤖</span> AI/ML</h3>
+          <div class="skill-tags">
+            <div class="skill-tag accent-tag">Machine Learning</div>
+            <div class="skill-tag">Generative AI</div>
+            <div class="skill-tag">AI Concepts</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proficiency-bars reveal">
+        <h3 class="proficiency-title">Core Proficiencies</h3>
+        <div class="bar-item">
+          <div class="bar-label"><span>Frontend Development</span><span>85%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-width="85"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span>Java Programming</span><span>80%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-width="80"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span>Database Management</span><span>75%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-width="75"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span>AI & Machine Learning</span><span>70%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-width="70"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span>Cloud (AWS)</span><span>65%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-width="65"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section class="section projects" id="projects">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">03 / Projects</span>
+        <h2 class="section-title">What I've <span class="accent">Built</span></h2>
+      </div>
+      <div class="projects-grid">
+
+        <div class="project-card glass reveal featured">
+          <div class="project-number">01</div>
+          <div class="project-top">
+            <div class="project-icon-wrap">
+              <span class="project-emoji">📚</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/vasugosula" target="_blank" class="project-link-btn" title="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-name">Learning Management System</h3>
+          <p class="project-desc">A full-featured web-based platform to manage courses, learning resources, student activities, and academic interactions with an intuitive UI.</p>
+          <div class="project-tech">
+            <span class="tech-badge">PHP</span>
+            <span class="tech-badge">MySQL</span>
+            <span class="tech-badge">HTML/CSS</span>
+            <span class="tech-badge">JavaScript</span>
+          </div>
+          <div class="project-glow"></div>
+        </div>
+
+        <div class="project-card glass reveal">
+          <div class="project-number">02</div>
+          <div class="project-top">
+            <div class="project-icon-wrap">
+              <span class="project-emoji">🏦</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/vasugosula" target="_blank" class="project-link-btn" title="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-name">Bank Management System</h3>
+          <p class="project-desc">Secure software application for managing banking operations — account creation, transactions, customer data management with robust security practices.</p>
+          <div class="project-tech">
+            <span class="tech-badge">Java</span>
+            <span class="tech-badge">MySQL</span>
+            <span class="tech-badge">JDBC</span>
+          </div>
+          <div class="project-glow"></div>
+        </div>
+
+        <div class="project-card glass reveal">
+          <div class="project-number">03</div>
+          <div class="project-top">
+            <div class="project-icon-wrap">
+              <span class="project-emoji">🤖</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/vasugosula" target="_blank" class="project-link-btn" title="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-name">AI Chatbot</h3>
+          <p class="project-desc">Intelligent conversational chatbot capable of handling natural language queries and providing automated, context-aware responses using AI/ML concepts.</p>
+          <div class="project-tech">
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">AI/ML</span>
+            <span class="tech-badge">NLP</span>
+          </div>
+          <div class="project-glow"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE SECTION -->
+  <section class="section experience" id="experience">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">04 / Experience</span>
+        <h2 class="section-title">My <span class="accent">Journey</span></h2>
+      </div>
+      <div class="timeline">
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass">
+            <div class="timeline-icon">🤖</div>
+            <div class="timeline-content">
+              <span class="timeline-type">Workshop</span>
+              <h3>Agentic AI Workshop</h3>
+              <p>Participated in a government-supported Agentic AI Workshop, gaining hands-on insights into autonomous AI agents, prompt engineering, and real-world AI deployment.</p>
+              <div class="timeline-tags">
+                <span>AI Agents</span>
+                <span>Government Initiative</span>
+                <span>Hands-on</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass">
+            <div class="timeline-icon">💼</div>
+            <div class="timeline-content">
+              <span class="timeline-type">Virtual Internship</span>
+              <h3>ServiceNow Virtual Internship</h3>
+              <p>Completed the ServiceNow Virtual Internship, acquiring expertise in IT service management, workflow automation, and enterprise platform development.</p>
+              <div class="timeline-tags">
+                <span>ServiceNow</span>
+                <span>ITSM</span>
+                <span>Automation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass">
+            <div class="timeline-icon">⚡</div>
+            <div class="timeline-content">
+              <span class="timeline-type">Hackathon</span>
+              <h3>Synapse 2K25 Hackathon</h3>
+              <p>Participated in Synapse 2K25, a competitive hackathon that challenged participants to build innovative solutions under time pressure, fostering creativity and technical agility.</p>
+              <div class="timeline-tags">
+                <span>Innovation</span>
+                <span>Teamwork</span>
+                <span>Problem Solving</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS SECTION -->
+  <section class="section certifications" id="certifications">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">05 / Certifications</span>
+        <h2 class="section-title">Credentials & <span class="accent">Badges</span></h2>
+      </div>
+      <div class="certs-grid">
+
+        <div class="cert-card glass reveal">
+          <div class="cert-badge-icon">🏆</div>
+          <div class="cert-info">
+            <h3>ServiceNow CSA</h3>
+            <p>Certified System Administrator</p>
+            <span class="cert-issuer">ServiceNow</span>
+          </div>
+          <div class="cert-glow"></div>
+        </div>
+
+        <div class="cert-card glass reveal">
+          <div class="cert-badge-icon">🥇</div>
+          <div class="cert-info">
+            <h3>ServiceNow CAD</h3>
+            <p>Certified Application Developer</p>
+            <span class="cert-issuer">ServiceNow</span>
+          </div>
+          <div class="cert-glow"></div>
+        </div>
+
+        <div class="cert-card glass reveal">
+          <div class="cert-badge-icon">🤖</div>
+          <div class="cert-info">
+            <h3>Oracle Generative AI</h3>
+            <p>Generative AI Certified Professional</p>
+            <span class="cert-issuer">Oracle</span>
+          </div>
+          <div class="cert-glow"></div>
+        </div>
+
+        <div class="cert-card glass reveal">
+          <div class="cert-badge-icon">📜</div>
+          <div class="cert-info">
+            <h3>Coursera Certifications</h3>
+            <p>Multiple Professional Certificates</p>
+            <span class="cert-issuer">Coursera</span>
+          </div>
+          <div class="cert-glow"></div>
+        </div>
+
+      </div>
+
+      <div class="achievements-row reveal">
+        <h3 class="achievements-title">Achievements</h3>
+        <div class="achievements-list">
+          <div class="achievement-item glass">
+            <span class="ach-icon">🏅</span>
+            <span>Synapse 2K25 Hackathon Participant</span>
+          </div>
+          <div class="achievement-item glass">
+            <span class="ach-icon">💡</span>
+            <span>College-Level Coding Competition Participant</span>
+          </div>
+          <div class="achievement-item glass">
+            <span class="ach-icon">⭐</span>
+            <span>CGPA 9.24 — Top Academic Performer</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="section contact" id="contact">
+    <div class="contact-glow"></div>
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">06 / Contact</span>
+        <h2 class="section-title">Let's <span class="accent">Connect</span></h2>
+        <p class="section-sub">Have an opportunity or project in mind? Let's talk.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="contact-card glass">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <span class="contact-label">Email</span>
+                <a href="mailto:vasugosula@gmail.com" class="contact-value">vasugosula@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.64A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.29 6.29l1.28-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              </div>
+              <div>
+                <span class="contact-label">Phone</span>
+                <a href="tel:+917075843153" class="contact-value">+91 7075843153</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <span class="contact-label">Location</span>
+                <span class="contact-value">Porumamilla, Andhra Pradesh, India</span>
+              </div>
+            </div>
+          </div>
+          <div class="contact-socials">
+            <a href="https://github.com/vasugosula" target="_blank" class="contact-social-btn glass">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/gosula-venkata-vasu-965a1931b" target="_blank" class="contact-social-btn glass">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form glass reveal" id="contactForm">
+          <h3 class="form-title">Send a Message</h3>
+          <div class="form-group">
+            <input type="text" id="name" placeholder=" " required />
+            <label for="name">Your Name</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" placeholder=" " required />
+            <label for="email">Your Email</label>
+          </div>
+          <div class="form-group">
+            <input type="text" id="subject" placeholder=" " required />
+            <label for="subject">Subject</label>
+          </div>
+          <div class="form-group">
+            <textarea id="message" rows="4" placeholder=" " required></textarea>
+            <label for="message">Your Message</label>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit">
+            <span>Send Message</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">GVV<span class="dot">.</span></div>
+        <p class="footer-text">Designed & Built by <span class="accent">Gosula Venkata Vasu</span></p>
+        <p class="footer-copy">© 2025 All Rights Reserved</p>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+      </button>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
